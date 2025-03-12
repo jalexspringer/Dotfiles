@@ -8,13 +8,18 @@
             "bluetooth",
             "network",
             "tray" ],
-        "modules-center": ["clock", "pulseaudio", "cava"],
+        "modules-center": ["clock", "pulseaudio"],
         "modules-right": ["group/expand"],
 
 
         "hyprland/workspaces": {
             "format": "{icon}",
             "format-icons": {
+        		"1": "",
+        		"2": "",
+        		"3": "",
+        		"4": "",
+        		"5": "",
                 "active": "",
                 "default": "",
                 "empty": ""
@@ -22,10 +27,6 @@
             "persistent-workspaces": {
                 "*": [ 1,2,3,4,5 ]
             }
-        },
-        "cava": {
-            
-            
         },
         "pulseaudio": {
         	"format": "{icon} {volume}% ",

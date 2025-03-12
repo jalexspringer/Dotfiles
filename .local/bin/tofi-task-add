@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Kill any existing tofi instances or launch a new one
+if (ps -a | grep tofi >/dev/null); then
+    killall -q tofi
+else
+    # Use tofi to get task input
+    TASK_ENTRY=$(printf "h" "test" | tofi --prompt="Enter task: ")
+    
+    # If the user entered something, add it as a task
+    if [ -n "$TASK_ENTRY" ]; then
+        task add "$TASK_ENTRY"
+        
+        # Optional: Show notification
+        if command -v notify-send &> /dev/null; then
+            notify-send "Task Added" "$TASK_ENTRY"
+        fi
+    fi
+fi

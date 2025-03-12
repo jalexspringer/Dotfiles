@@ -28,4 +28,4 @@ alias td='clear;task next +ACTIVE or +OVERDUE or due:today or scheduled:today or
 alias tal='task add dep:"$(task +LATEST uuids)"'
 
 set -gx EDITOR helix
-set -gx VISUAL zed
+set -gx VISUAL helix
