@@ -1,0 +1,43 @@
+#!/usr/bin/env fish
+
+# Configuration
+set layout_name godot-helix-yazi
+set session_name godot-dev
+set config_dir ~/.config/yazelix/zellij
+set layout_dir ~/.config/yazelix/zellij/layouts
+
+# Parse file and project arguments
+set file ""
+set project_dir ""
+
+# Simple arg parsing
+if test (count $argv) -ge 1
+    set file $argv[1]
+end
+
+if test (count $argv) -ge 2
+    set project_dir $argv[2]
+    cd "$project_dir"
+end
+
+# Start or attach to session
+set session_exists (zellij ls | grep $session_name | wc -l)
+
+if test $session_exists -eq 0
+    echo "Starting new Godot development session..."
+    ghostty -- zellij -l $layout_name -s $session_name
+else
+    echo "Attaching to existing session..."
+    ghostty -- zellij attach $session_name
+end
+
+# If a file was specified, open it in Helix
+if test -n "$file"
+    sleep 0.5
+    zellij -s $session_name action go-to-tab-name "Helix"
+    zellij -s $session_name action write 27 # ESC
+    zellij -s $session_name action write-chars ":open $file"
+    zellij -s $session_name action write 13 # ENTER
+end
+
+echo "Godot development environment ready!"

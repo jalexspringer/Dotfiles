@@ -1,0 +1,68 @@
+theme = "base16_transparent"
+
+[editor]
+bufferline = "multiple"
+color-modes = true
+line-number = "relative"
+mouse = false
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "spinner", "version-control", "separator", "file-name", "file-modification-indicator", "read-only-indicator"]
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.lsp]
+auto-signature-help = false
+display-messages = true
+
+[editor.indent-guides]
+character = "╎"
+render = true
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "disable"
+
+[keys.select]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+"A-x" = "extend_to_line_bounds"
+"X" = "select_line_above"
+"tab" = "extend_parent_node_end"
+"S-tab" = "extend_parent_node_start"
+
+[keys.normal]
+"A-x" = "extend_to_line_bounds"
+"X" = "select_line_above"
+"tab" = "move_parent_node_end"
+"S-tab" = "move_parent_node_start"
+
+# Godot specific keymaps
+# g = { d = ":vsplit godot --path . --debug", p = ":vsplit godot --path ." }
+
+[keys.normal.space]
+space = "file_picker"
+e = ":write"
+z = ":sh zig build"
+q = ":write-quit"
+
+[keys.insert]
+"S-tab" = "move_parent_node_start"
+
+
+
+
