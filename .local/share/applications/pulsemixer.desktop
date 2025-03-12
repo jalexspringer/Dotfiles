@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Audio Control
+GenericName=Audio Manager
+Comment=TUI for audio Management with pulsemixer
+Exec=hyprctl dispatch exec [float] -- ghostty -e pulsemixer
+Terminal=true
+Categories=System;Monitor;ConsoleOnly;
+Keywords=system;process;task
+
