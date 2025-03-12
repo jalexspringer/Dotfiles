@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Bluetooth
+GenericName=Bluetooh Manager
+Comment=TUI for Bluetooth Management with bluez
+Exec=hyprctl dispatch exec [float] -- ghostty -e bluetui
+Terminal=true
+Categories=System;Monitor;ConsoleOnly;
+Keywords=system;process;task
+

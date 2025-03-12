@@ -3,7 +3,7 @@
 if (ps -a | grep tofi >/dev/null); then
   killall -q tofi
 else
-  case $(printf "%s\n" "Power Off" "Restart" "Suspend" "Hibernate" "Lock" "Log Out" | tofi --width 165 --height 260) in
+  case $(printf "%s\n" "Power Off" "Restart" "Suspend" "Hibernate" "Lock" "Log Out" | tofi --width 500 --height 250) in
   "Power Off")
     systemctl poweroff
     ;;

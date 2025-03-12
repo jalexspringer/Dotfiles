@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Type=Application
+Name=WiFi
+GenericName=WiFi Manager
+Comment=TUI for wifi management with iwctl iwd
+Exec=hyprctl dispatch exec [float] -- ghostty -e impala
+Terminal=true
+Categories=System;Internet;ConsoleOnly;
+Keywords=system;process;task
+
